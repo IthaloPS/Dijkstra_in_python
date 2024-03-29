@@ -1,32 +1,32 @@
 import sys
 
 
-def dijkstra(graph, origin, destination):
-    distance = {v: sys.maxsize for v in graph}
-    distance[origin] = 0
-    visited = set()
+def dijkstra(grafo, origem, destino):
+    distancia = {v: sys.maxsize for v in grafo}
+    distancia[origem] = 0
+    visitado = set()
 
-    while visited != set(distance):
-        current_vertex = None
-        short_distance = sys.maxsize
+    while visitado != set(distancia):
+        atual_vertex = None
+        menor_distancia = sys.maxsize
 
-        for v in graph:
-            if v not in visited and distance[v] < short_distance:
-                current_vertex = v
-                short_distance = distance[v]
-                if v == destination:
+        for v in grafo:
+            if v not in visitado and distancia[v] < menor_distancia:
+                atual_vertex = v
+                menor_distancia = distancia[v]
+                if v == destino:
                     break
 
-        visited.add(current_vertex)
+        visitado.add(atual_vertex)
 
-        for neighbor, weight in graph[current_vertex].items():
-            if distance[current_vertex] + weight < distance[neighbor]:
-                distance[neighbor] = distance[current_vertex] + weight
+        for vizinho, peso in grafo[atual_vertex].items():
+            if distancia[atual_vertex] + peso < distancia[vizinho]:
+                distancia[vizinho] = distancia[atual_vertex] + peso
 
-    return distance
+    return distancia
 
 
-graph = {
+grafo_cidade_base = {
     'ARAD': {'ZERIND': 75, 'SIBIU': 140, 'TIMISOARA': 118},
     'ZERIND': {'ARAD': 75, 'ORADEA': 71},
     'ORADEA': {'ZERIND': 71, 'SIBIU': 151},
@@ -49,10 +49,10 @@ graph = {
     'EFORIE': {'HIRSOVA': 86}
 }
 
-origin = str(input('from: ').upper().rstrip().lstrip())
-destination = str(input('to: ').upper().rstrip().lstrip())
-if origin not in graph or destination not in graph:
+origem_entrada = str(input('Saindo de: ').upper().rstrip().lstrip())
+destino_entrada = str(input('Indo para: ').upper().rstrip().lstrip())
+if origem_entrada not in grafo_cidade_base or destino_entrada not in grafo_cidade_base:
     print('Valores não existentes!!!')
 else:
-    short_path = dijkstra(graph, origin, destination)
-    print(f'O caminho mais curto de {origin}, ate {destination} é de {short_path.get(destination)}')
+    short_path = dijkstra(grafo_cidade_base, origem_entrada, destino_entrada)
+    print(f'O caminho mais curto de {origem_entrada}, ate {destino_entrada} é de {short_path.get(destino_entrada)}')
