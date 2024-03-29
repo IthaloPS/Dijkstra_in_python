@@ -1,4 +1,4 @@
-#O que é o algoritmo de Dijkstra.
+<h1>O que é o algoritmo de Dijkstra.</h1>
 
 
 O algoritmo de Dijkstra é um algoritmo clássico usado para encontrar o caminho mais curto entre dois pontos em um grafo, onde todas as arestas têm pesos não negativos. Foi concebido por Edsger W. Dijkstra em 1956.
@@ -10,7 +10,7 @@ Em essência, o algoritmo funciona encontrando iterativamente o caminho mais cur
 Portanto, o algoritmo de Dijkstra é fundamental em muitas aplicações que envolvem encontrar rotas ou caminhos mais curtos em redes ou grafos ponderados.
 
 
-#Explicação da implementação.
+<h1>Explicação da implementação.</h1>
 
 
 O algoritmo de Dijkstra é implementado neste código para encontrar o caminho mais curto entre um nó de origem e um nó de destino em um grafo ponderado. Aqui está um breve resumo do funcionamento do método:
