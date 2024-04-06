@@ -56,6 +56,8 @@ origem_entrada = str(input('Saindo de: ').upper().rstrip().lstrip())
 destino_entrada = str(input('Indo para: ').upper().rstrip().lstrip())
 if origem_entrada not in grafo_cidade_base or destino_entrada not in grafo_cidade_base:
     print('Valores não existentes!!!')
+elif origem_entrada == destino_entrada:
+    print(f'Você já está em {destino_entrada}!')
 else:
     distancia_total, caminho = dijkstra(grafo_cidade_base, origem_entrada, destino_entrada)
     print(f'O caminho mais curto de {origem_entrada} até {destino_entrada} é de {distancia_total} KM')
