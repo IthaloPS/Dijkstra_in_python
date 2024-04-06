@@ -5,6 +5,7 @@ def dijkstra(grafo, origem, destino):
     distancia = {v: sys.maxsize for v in grafo}
     distancia[origem] = 0
     visitado = set()
+    caminho = {v: [] for v in grafo}
 
     while visitado != set(distancia):
         atual_vertex = None
@@ -22,8 +23,10 @@ def dijkstra(grafo, origem, destino):
         for vizinho, peso in grafo[atual_vertex].items():
             if distancia[atual_vertex] + peso < distancia[vizinho]:
                 distancia[vizinho] = distancia[atual_vertex] + peso
+                caminho[vizinho] = caminho[atual_vertex] + [atual_vertex]
 
-    return distancia
+    caminho_completo = caminho[destino] + [destino]
+    return distancia[destino], caminho_completo
 
 
 grafo_cidade_base = {
@@ -53,6 +56,10 @@ origem_entrada = str(input('Saindo de: ').upper().rstrip().lstrip())
 destino_entrada = str(input('Indo para: ').upper().rstrip().lstrip())
 if origem_entrada not in grafo_cidade_base or destino_entrada not in grafo_cidade_base:
     print('Valores não existentes!!!')
+elif origem_entrada == destino_entrada:
+    print(f'Você já está em {destino_entrada}!')
 else:
-    short_path = dijkstra(grafo_cidade_base, origem_entrada, destino_entrada)
-    print(f'O caminho mais curto de {origem_entrada}, ate {destino_entrada} é de {short_path.get(destino_entrada)}')
+    distancia_total, caminho = dijkstra(grafo_cidade_base, origem_entrada, destino_entrada)
+    print(f'O caminho mais curto de {origem_entrada} até {destino_entrada} é de {distancia_total} KM')
+    print('Caminho percorrido:')
+    print(' -> '.join(caminho))
