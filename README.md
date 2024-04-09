@@ -26,3 +26,5 @@ Marcação como visitado: Após calcular as distâncias mínimas para todos os v
 Conclusão: O algoritmo continua até que todos os nós tenham sido visitados e suas distâncias mínimas tenham sido calculadas. Em seguida, retorna as distâncias mínimas de cada nó em relação ao nó de origem.
 
 Este algoritmo garante encontrar o caminho mais curto de um nó de origem para todos os outros nós no grafo, não apenas para o nó de destino específico. O caminho mais curto do nó de origem para o nó de destino pode ser extraído da estrutura de dados de distâncias mínimas retornada pelo algoritmo.
+
+![Figure_1](https://github.com/IthaloPS/Dijkstra_in_python/assets/102128741/f5d891a8-8974-48ef-b24e-951198d63478)
