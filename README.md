@@ -27,4 +27,6 @@ Conclusão: O algoritmo continua até que todos os nós tenham sido visitados e 
 
 Este algoritmo garante encontrar o caminho mais curto de um nó de origem para todos os outros nós no grafo, não apenas para o nó de destino específico. O caminho mais curto do nó de origem para o nó de destino pode ser extraído da estrutura de dados de distâncias mínimas retornada pelo algoritmo.
 
-![Figure_1](https://github.com/IthaloPS/Dijkstra_in_python/assets/102128741/f5d891a8-8974-48ef-b24e-951198d63478)
+![Figure_1](https://github.com/IthaloPS/Dijkstra_in_python/assets/102128741/618052b4-79d2-4f8c-8a12-e9205a35a80c)
+
+
