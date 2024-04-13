@@ -2,6 +2,7 @@ import sys
 import networkx as nx
 import matplotlib.pyplot as plt
 
+
 def dijkstra(grafo, origem, destino):
     distancia = {v: sys.maxsize for v in grafo}
     distancia[origem] = 0
@@ -29,6 +30,7 @@ def dijkstra(grafo, origem, destino):
     caminho_completo = caminho[destino] + [destino]
     return distancia[destino], caminho_completo
 
+
 def visualizar_grafo(grafo, caminho, origem, destino):
     G = nx.Graph()
     for vertice, vizinhos in grafo.items():
@@ -52,6 +54,7 @@ def visualizar_grafo(grafo, caminho, origem, destino):
     plt.title("Grafo com Caminho Percorrido")
     plt.axis('off')
     plt.show()
+
 
 grafo_cidade_base = {
     'ARAD': {'ZERIND': 75, 'SIBIU': 140, 'TIMISOARA': 118},
